@@ -1,7 +1,1 @@
-Ini adalah kumpulan dari tugas-tugas dari mata kuliah implementasi algoritma.
-
-Nama: Senoaji Sapta Ramadhana
-
-Kelas: D3RPLA-45-02
-
----
+Branch ini adalah tugas mata kuliah IMA Jurnal ke-1 membuat HelloWorld dengan bahasa pemrograman Java.
