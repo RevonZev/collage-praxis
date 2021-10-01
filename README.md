@@ -1,1 +1,1 @@
-Branch ini adalah tugas mata kuliah IMA Jurnal ke-1 membuat HelloWorld dengan bahasa pemrograman Java.
+Branch ini adalah dari materi mata kuliah IMA Minggu ke-2 membuat class dan objek serta PR masukan user NIM, Nama, dan Kelas(/IPK)
