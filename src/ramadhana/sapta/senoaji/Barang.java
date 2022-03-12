@@ -1,5 +1,7 @@
 package ramadhana.sapta.senoaji;
 
+import java.util.Objects;
+
 public class Barang implements Comparable<Barang> {
     private char kodeTipe;
     private int kode;
@@ -11,6 +13,7 @@ public class Barang implements Comparable<Barang> {
         this.jenis = jenis;
         this.nama = nama;
         this.stok = stok;
+        setKodeTipe();
     }
 
     public String getFullKode() {
@@ -43,6 +46,7 @@ public class Barang implements Comparable<Barang> {
 
     public void setJenis(String jenis) {
         this.jenis = jenis;
+        setKodeTipe();
     }
 
     public void setNama(String nama) {
@@ -62,8 +66,28 @@ public class Barang implements Comparable<Barang> {
         return Integer.toString(this.kode);
     }
 
+    private void setKodeTipe() {
+        if (Objects.equals(this.jenis, "pulpen") || Objects.equals(this.jenis, "pensil") || Objects.equals(this.jenis, "spidol")) {
+            this.kodeTipe = 'A';
+            return;
+        } else if (Objects.equals(this.jenis, "buku tulis") || Objects.equals(this.jenis, "kertas")) {
+            this.kodeTipe = 'B';
+            return;
+        }
+        this.kodeTipe = 'C';
+    }
+
     @Override
     public int compareTo(Barang o) {
         return this.getFullKode().compareTo(o.getFullKode());
+    }
+
+    @Override
+    public String toString() {
+        return getFullKode() + " {" +
+                "jenis='" + jenis + '\'' +
+                ", nama='" + nama + '\'' +
+                ", stok=" + stok +
+                '}';
     }
 }
