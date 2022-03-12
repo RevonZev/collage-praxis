@@ -1,6 +1,7 @@
 package ramadhana.sapta.senoaji;
 
 import java.util.ArrayList;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class Main {
@@ -90,7 +91,7 @@ public class Main {
         System.out.print("1. Modifikasi nama barang\n2. Modifikasi stok barang\nMasukkan nomor: ");
         int in = sc.nextInt(); sc.nextLine();
         System.out.print("Modifikasi menjadi: ");
-        String editTo = sc.nextLine();
+        String editTo = sc.nextLine().toLowerCase();
 
         // Can be more efficient
         if (editKode.charAt(0) == 'A') {
@@ -131,9 +132,9 @@ public class Main {
 
     private static void addBarang() {
         System.out.print("\nJenis barang: ");
-        String jenis = sc.nextLine();
+        String jenis = sc.nextLine().toLowerCase();
         System.out.print("Nama barang: ");
-        String nama = sc.nextLine();
+        String nama = sc.nextLine().toLowerCase();
         System.out.print("Stok barang: ");
         int stok = sc.nextInt();
 
