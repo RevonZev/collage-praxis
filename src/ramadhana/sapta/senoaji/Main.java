@@ -6,9 +6,9 @@ import java.util.Scanner;
 public class Main {
 
     static Scanner sc = new Scanner(System.in);
-    static ArrayList<Barang> barangA = new ArrayList<Barang>();
-    static ArrayList<Barang> barangB = new ArrayList<Barang>();
-    static ArrayList<Barang> barangC = new ArrayList<Barang>();
+    static ArrayList<Barang> barangA = new ArrayList<>();
+    static ArrayList<Barang> barangB = new ArrayList<>();
+    static ArrayList<Barang> barangC = new ArrayList<>();
 
     public static void main(String[] args) {
 //        Toko ABC (ATK)
@@ -64,8 +64,6 @@ public class Main {
             for (int i = 0; i < barangA.size(); i++) {
                 if (in.equals(barangA.get(i).getFullKode())) {
                     barangA.remove(i);
-                    // Debug
-                    System.out.println("Removed " + in);
                     return;
                 }
             }
@@ -73,8 +71,6 @@ public class Main {
             for (int i = 0; i < barangB.size(); i++) {
                 if (in.equals(barangB.get(i).getFullKode())) {
                     barangB.remove(i);
-                    // Debug
-                    System.out.println("Removed " + in);
                     return;
                 }
             }
@@ -82,8 +78,6 @@ public class Main {
             for (int i = 0; i < barangC.size(); i++) {
                 if (in.equals(barangC.get(i).getFullKode())) {
                     barangC.remove(i);
-                    // Debug
-                    System.out.println("Removed " + in);
                     return;
                 }
             }
@@ -100,34 +94,34 @@ public class Main {
 
         // Can be more efficient
         if (editKode.charAt(0) == 'A') {
-            for (int i = 0; i < barangA.size(); i++) {
-                if (editKode.equals(barangA.get(i).getFullKode())) {
+            for (Barang barang : barangA) {
+                if (editKode.equals(barang.getFullKode())) {
                     if (in == 1) {
-                        barangA.get(i).setNama(editTo);
+                        barang.setNama(editTo);
                     } else if (in == 2) {
-                        barangA.get(i).setStok(Integer.parseInt(editTo));
+                        barang.setStok(Integer.parseInt(editTo));
                     }
                     return;
                 }
             }
         } else if (editKode.charAt(0) == 'B') {
-            for (int i = 0; i < barangB.size(); i++) {
-                if (editKode.equals(barangB.get(i).getFullKode())) {
+            for (Barang barang : barangB) {
+                if (editKode.equals(barang.getFullKode())) {
                     if (in == 1) {
-                        barangB.get(i).setNama(editTo);
+                        barang.setNama(editTo);
                     } else if (in == 2) {
-                        barangB.get(i).setStok(Integer.parseInt(editTo));
+                        barang.setStok(Integer.parseInt(editTo));
                     }
                     return;
                 }
             }
         } else if (editKode.charAt(0) == 'C') {
-            for (int i = 0; i < barangC.size(); i++) {
-                if (editKode.equals(barangC.get(i).getFullKode())) {
+            for (Barang barang : barangC) {
+                if (editKode.equals(barang.getFullKode())) {
                     if (in == 1) {
-                        barangC.get(i).setNama(editTo);
+                        barang.setNama(editTo);
                     } else if (in == 2) {
-                        barangC.get(i).setStok(editTo);
+                        barang.setStok(Integer.parseInt(editTo));
                     }
                     return;
                 }
@@ -170,8 +164,5 @@ public class Main {
             }
             barangC.add(barang);
         }
-
-        // Debug
-        System.out.println("Added " + barang.toString());
     }
 }
