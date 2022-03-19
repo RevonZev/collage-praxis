@@ -35,6 +35,22 @@ public class SinglyLinkedList<E> {
         }
     }
 
+    public E removeFromFront() throws NoSuchElementException {
+        if (isEmpty()) { // throw exception if List is empty
+            throw new NoSuchElementException(name + " is empty");
+        }
+        E removedItem = firstNode.data; // retrieve data being removed
+        // update references firstNode and lastNode
+        if (firstNode == lastNode) {
+            firstNode = lastNode = null;
+        } else { // locate new first node
+            ListNode<E> current = firstNode;
+            firstNode = current.next; // current is new lastNode
+            current.next = null;
+        }
+        return removedItem; // return removed node data
+    }
+
     public E removeFromBack() throws NoSuchElementException {
         if (isEmpty()) { // throw exception if List is empty
             throw new NoSuchElementException(name + " is empty");

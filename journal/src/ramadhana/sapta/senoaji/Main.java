@@ -7,10 +7,6 @@ public class Main {
     static SinglyLinkedList<Pegawai> linkedList = new SinglyLinkedList<>();
 
     public static void main(String[] args) {
-        linkedList.insertAtFront(new Pegawai("6706123456", "Yulia", "D3IF 45-01"));
-        linkedList.insertAtBack(new Pegawai("6706789013", "Riki", "D3IF 45-02"));
-        linkedList.insertAtFront(new Pegawai("6706123458", "Tina", "D3IF 45-03"));
-
         while (true) {
             switch (mainMenu()) {
                 case 1:
@@ -34,6 +30,17 @@ public class Main {
     }
 
     private static void eraseMenu() {
+        System.out.println();
+        System.out.print("Hilangkan data diawal (1) atau akhir (2) list: ");
+        switch (sc.nextInt()) {
+            case 1:
+                linkedList.removeFromFront();
+                break;
+            case 2:
+                linkedList.removeFromBack();
+                break;
+        }
+        System.out.println();
     }
 
     private static void inputMenu() {
