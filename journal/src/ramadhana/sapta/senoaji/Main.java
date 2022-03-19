@@ -15,13 +15,13 @@ public class Main {
             switch (mainMenu()) {
                 case 1:
                     inputMenu();
-                    continue;
+                    break;
                 case 2:
                     eraseMenu();
-                    continue;
+                    break;
                 case 3:
                     displayMenu();
-                    continue;
+                    break;
                 default:
                     System.exit(0);
             }
@@ -37,6 +37,24 @@ public class Main {
     }
 
     private static void inputMenu() {
+        System.out.println();
+        System.out.print("NIP: ");
+        String nip = sc.next();
+        System.out.print("Nama: ");
+        String nama = sc.next();
+        System.out.print("Devisi: ");
+        String devisi = sc.next();
+
+        System.out.print("Tambahkan data diawal (1) atau akhir (2) list: ");
+        switch (sc.nextInt()) {
+            case 1:
+                linkedList.insertAtFront(new Pegawai(nip, nama, devisi));
+                break;
+            case 2:
+                linkedList.insertAtBack(new Pegawai(nip, nama, devisi));
+                break;
+        }
+        System.out.println();
     }
 
     private static int mainMenu() {

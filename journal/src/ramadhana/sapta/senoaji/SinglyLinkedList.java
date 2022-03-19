@@ -5,13 +5,16 @@ public class SinglyLinkedList<E> {
     private ListNode<E> firstNode;
     private ListNode<E> lastNode;
     private String name;
+
     public SinglyLinkedList() {
         this("linked list");
     }
+
     public SinglyLinkedList(String listName) {
         name = listName;
         firstNode = lastNode = null;
     }
+
     public void insertAtFront(E insertItem) {
         ListNode newNode = new ListNode(insertItem);
         if (isEmpty()) { // firstNode and lastNode refer to same object
@@ -21,6 +24,7 @@ public class SinglyLinkedList<E> {
             firstNode = newNode;
         }
     }
+
     public void insertAtBack(E insertItem) {
         ListNode newNode = new ListNode(insertItem);
         if (isEmpty()) { // firstNode and lastNode refer to same object
@@ -30,6 +34,7 @@ public class SinglyLinkedList<E> {
             lastNode = newNode;
         }
     }
+
     public E removeFromBack() throws NoSuchElementException {
         if (isEmpty()) { // throw exception if List is empty
             throw new NoSuchElementException(name + " is empty");
@@ -49,9 +54,11 @@ public class SinglyLinkedList<E> {
         }
         return removedItem; // return removed node data
     }
+
     private boolean isEmpty() {
         return firstNode == null;
     }
+
     public void print() {
         if (isEmpty()) {
             System.out.printf("Empty %s\n", name);
