@@ -54,14 +54,13 @@ public class SinglyLinkedList<E> {
     }
     public void print() {
         if (isEmpty()) {
-            System.out.printf("Empty %s%n", name);
+            System.out.printf("Empty %s\n", name);
             return;
         }
-        System.out.printf("The %s is: %n", name);
         ListNode<E> current = firstNode;
         // while not at end of list, output current node's data
         while (current != null) {
-            System.out.printf("%s ", current.data);
+            System.out.printf("%s \n", current.data);
             current = current.next;
         }
         System.out.println();
