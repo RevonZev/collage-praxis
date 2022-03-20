@@ -13,7 +13,7 @@ public class Main {
 //      ✔ Input lagu (di akhir)
 //      ✔ Hapus lagu (✔ terakhir masuk & ✔ sesuai judul)
 //      ✔ Memainkan lagu (display semua, awal > akhir > awal)
-            static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
     static DoublyLinkedList<Lagu> linkedList = new DoublyLinkedList<>();
 
     public static void main(String[] args) {
