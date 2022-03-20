@@ -21,6 +21,7 @@ public class SinglyLinkedList<E> {
                     firstNode = lastNode = new ListNode<E>(insertItem);
         } else { // lastNode refers to new node
             lastNode.next = newNode;
+            newNode.perv = lastNode;
             lastNode = newNode;
         }
     }
