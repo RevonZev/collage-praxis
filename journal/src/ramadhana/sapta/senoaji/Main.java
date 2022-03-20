@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     static Scanner sc = new Scanner(System.in);
-    static SinglyLinkedList<Pegawai> linkedList = new SinglyLinkedList<>();
+    static SinglyLinkedList<Lagu> linkedList = new SinglyLinkedList<>();
 
     public static void main(String[] args) {
         while (true) {
@@ -55,10 +55,10 @@ public class Main {
         System.out.print("Tambahkan data diawal (1) atau akhir (2) list: ");
         switch (sc.nextInt()) {
             case 1:
-                linkedList.insertAtFront(new Pegawai(nip, nama, devisi));
+                linkedList.insertAtFront(new Lagu(nip, nama, devisi));
                 break;
             case 2:
-                linkedList.insertAtBack(new Pegawai(nip, nama, devisi));
+                linkedList.insertAtBack(new Lagu(nip, nama, devisi));
                 break;
         }
         System.out.println();
