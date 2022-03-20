@@ -1,16 +1,16 @@
 package ramadhana.sapta.senoaji;
 import java.util.NoSuchElementException;
 
-public class SinglyLinkedList<E> {
+public class DoublyLinkedList<E> {
     private ListNode<E> firstNode;
     private ListNode<E> lastNode;
     private String name;
 
-    public SinglyLinkedList() {
+    public DoublyLinkedList() {
         this("linked list");
     }
 
-    public SinglyLinkedList(String listName) {
+    public DoublyLinkedList(String listName) {
         name = listName;
         firstNode = lastNode = null;
     }
@@ -98,6 +98,12 @@ public class SinglyLinkedList<E> {
         while (current != null) {
             System.out.printf("%s \n", current.data);
             current = current.next;
+        }
+        current = lastNode.perv;
+        // while not at end of list, output current node's data
+        while (current != null) {
+            System.out.printf("%s \n", current.data);
+            current = current.perv;
         }
         System.out.println();
     }
