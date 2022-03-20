@@ -15,16 +15,6 @@ public class SinglyLinkedList<E> {
         firstNode = lastNode = null;
     }
 
-    public void insertAtFront(E insertItem) {
-        ListNode newNode = new ListNode(insertItem);
-        if (isEmpty()) { // firstNode and lastNode refer to same object
-                    firstNode = lastNode = new ListNode<E>(insertItem);
-        } else { // firstNode refers to new node
-            newNode.next = firstNode;
-            firstNode = newNode;
-        }
-    }
-
     public void insertAtBack(E insertItem) {
         ListNode newNode = new ListNode(insertItem);
         if (isEmpty()) { // firstNode and lastNode refer to same object
@@ -33,22 +23,6 @@ public class SinglyLinkedList<E> {
             lastNode.next = newNode;
             lastNode = newNode;
         }
-    }
-
-    public E removeFromFront() throws NoSuchElementException {
-        if (isEmpty()) { // throw exception if List is empty
-            throw new NoSuchElementException(name + " is empty");
-        }
-        E removedItem = firstNode.data; // retrieve data being removed
-        // update references firstNode and lastNode
-        if (firstNode == lastNode) {
-            firstNode = lastNode = null;
-        } else { // locate new first node
-            ListNode<E> current = firstNode;
-            firstNode = current.next; // current is new lastNode
-            current.next = null;
-        }
-        return removedItem; // return removed node data
     }
 
     public E removeFromBack() throws NoSuchElementException {
