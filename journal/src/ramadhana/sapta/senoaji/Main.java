@@ -3,8 +3,18 @@ package ramadhana.sapta.senoaji;
 import java.util.Scanner;
 
 public class Main {
-    static Scanner sc = new Scanner(System.in);
-    static SinglyLinkedList<Lagu> linkedList = new SinglyLinkedList<>();
+//      Store:
+//      ✔ Judul Lagu
+//      ✔ Nama Penyani
+//
+//      ✔ Dianggap diputar saat didisplaykan semua
+//
+//      Ada:
+//      ✔ Input lagu (di akhir)
+//      ✔ Hapus lagu (✔ terakhir masuk & ✔ sesuai judul)
+//      ✔ Memainkan lagu (display semua, awal > akhir > awal)
+            static Scanner sc = new Scanner(System.in);
+    static DoublyLinkedList<Lagu> linkedList = new DoublyLinkedList<>();
 
     public static void main(String[] args) {
         while (true) {
@@ -25,47 +35,38 @@ public class Main {
     }
 
     private static void displayMenu() {
-        System.out.println();
         linkedList.print();
     }
 
     private static void eraseMenu() {
-        System.out.println();
-        System.out.print("Hilangkan data diawal (1) atau akhir (2) list: ");
-        switch (sc.nextInt()) {
-            case 1:
-                linkedList.removeFromFront();
-                break;
-            case 2:
-                linkedList.removeFromBack();
-                break;
+
+        System.out.print("1. Hapus lagu di akhir list\n2. Hapus lagu dengan judul\nMasukkan angka: ");
+        int usrIn = sc.nextInt();
+        if (usrIn == 1) {
+            linkedList.removeFromBack();
+        } else {
+            System.out.print("Judul: ");
+            String judul = sc.nextLine(); sc.next();
+            linkedList.removeByJudul(judul);
         }
         System.out.println();
     }
 
     private static void inputMenu() {
-        System.out.println();
-        System.out.print("NIP: ");
-        String nip = sc.next();
-        System.out.print("Nama: ");
-        String nama = sc.next();
-        System.out.print("Devisi: ");
-        String devisi = sc.next();
+        System.out.print("Judul: ");
+        String judul = sc.next();
+        System.out.print("Penyanyi: ");
+        String penyanyi = sc.next();
 
-        System.out.print("Tambahkan data diawal (1) atau akhir (2) list: ");
-        switch (sc.nextInt()) {
-            case 1:
-                linkedList.insertAtFront(new Lagu(nip, nama, devisi));
-                break;
-            case 2:
-                linkedList.insertAtBack(new Lagu(nip, nama, devisi));
-                break;
-        }
+        linkedList.insertAtBack(new Lagu(judul, penyanyi));
+
         System.out.println();
     }
 
     private static int mainMenu() {
-        System.out.print("1. Input data\n2. Hapus data\n3. Display Data\n4. Keluar\nMasukkan angka: ");
-        return sc.nextInt();
+        System.out.print("1. Input lagu\n2. Hapus lagu\n3. Mainkan lagu\n4. Keluar\nMasukkan angka: ");
+        int usrIn = sc.nextInt();
+        System.out.println();
+        return usrIn;
     }
 }
