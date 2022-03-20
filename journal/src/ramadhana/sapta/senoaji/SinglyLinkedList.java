@@ -15,7 +15,7 @@ public class SinglyLinkedList<E> {
         firstNode = lastNode = null;
     }
 
-    public void insertAtBack(E insertItem) {
+    public void insertAtBack(Lagu insertItem) {
         ListNode newNode = new ListNode(insertItem);
         if (isEmpty()) { // firstNode and lastNode refer to same object
                     firstNode = lastNode = new ListNode<E>(insertItem);
@@ -26,11 +26,11 @@ public class SinglyLinkedList<E> {
         }
     }
 
-    public E removeFromBack() throws NoSuchElementException {
+    public Lagu removeFromBack() throws NoSuchElementException {
         if (isEmpty()) { // throw exception if List is empty
             throw new NoSuchElementException(name + " is empty");
         }
-        E removedItem = lastNode.data; // retrieve data being removed
+        Lagu removedItem = lastNode.data; // retrieve data being removed
         // update references firstNode and lastNode
         if (firstNode == lastNode) {
             firstNode = lastNode = null;
@@ -39,6 +39,47 @@ public class SinglyLinkedList<E> {
             lastNode.perv = null;
             lastNode = current; // current is new lastNode
             current.next = null;
+        }
+        return removedItem; // return removed node data
+    }
+
+    public Lagu removeByJudul(String judul) throws NoSuchElementException {
+        if (isEmpty()) { // throw exception if List is empty
+            throw new NoSuchElementException(name + " is empty");
+        }
+        Lagu removedItem = null;
+        // update references firstNode and lastNode
+        if (firstNode == lastNode) {
+            firstNode = lastNode = null;
+        } else {
+            ListNode<E> current = firstNode;
+            while (current.getData().getJudul() != judul) {
+                // if there's no match
+                if (current.next == null) {
+                    return current.data;
+                }
+                current = current.next;
+            }
+            removedItem = current.data;
+            ListNode<E> pervNode = current.perv;
+            ListNode<E> nextNode = current.next;
+
+            // decouple the next and prev node from current
+            if (nextNode != null && pervNode != null) { // current node not at front or back
+                pervNode.next = nextNode;
+                nextNode.perv = pervNode;
+            } else if (nextNode == null) { // current node at back
+                pervNode.next = null;
+                lastNode = pervNode;
+            } else if (pervNode == null) { // current node at front
+                nextNode.perv = null;
+                firstNode = nextNode;
+            }
+
+            // decouple current
+            current.perv = null;
+            current.next = null;
+
         }
         return removedItem; // return removed node data
     }
