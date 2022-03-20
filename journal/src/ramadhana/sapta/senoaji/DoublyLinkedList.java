@@ -53,7 +53,7 @@ public class DoublyLinkedList<E> {
             firstNode = lastNode = null;
         } else {
             ListNode<E> current = firstNode;
-            while (current.getData().getJudul() != judul) {
+            while (current.getData().getJudul().equals(judul)) {
                 // if there's no match
                 if (current.next == null) {
                     return current.data;
