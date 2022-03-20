@@ -99,7 +99,7 @@ public class DoublyLinkedList<E> {
             System.out.printf("%s \n", current.data);
             current = current.next;
         }
-        current = lastNode.perv;
+        current = lastNode;
         // while not at end of list, output current node's data
         while (current != null) {
             System.out.printf("%s \n", current.data);
