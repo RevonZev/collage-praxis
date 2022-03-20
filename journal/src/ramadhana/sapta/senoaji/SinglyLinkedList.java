@@ -35,11 +35,8 @@ public class SinglyLinkedList<E> {
         if (firstNode == lastNode) {
             firstNode = lastNode = null;
         } else { // locate new last node
-            ListNode<E> current = firstNode;
-            // loop while current node does not refer to lastNode
-            while (current.next != lastNode) {
-                current = current.next;
-            }
+            ListNode<E> current = lastNode.perv;
+            lastNode.perv = null;
             lastNode = current; // current is new lastNode
             current.next = null;
         }
