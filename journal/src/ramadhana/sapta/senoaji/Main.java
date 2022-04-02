@@ -17,7 +17,6 @@ public class Main {
         int low = 0;
         int high = data.length - 1;
         int middle = (low + high + 1) / 2;
-        int location = -1;
         do {
             System.out.print(remainingElements(data, low, middle, high));
 
@@ -32,7 +31,7 @@ public class Main {
             }
 
             middle = (low + high + 1) / 2;
-        } while ((low <= high) && (location == -1));
+        } while ((low <= high));
         return - 1;
     }
 
@@ -42,14 +41,15 @@ public class Main {
         // append elements left in array
         for (int i = low; i <= high; i++) {
             if (i == middle) {
-                temporary.append("-" + data[i] + "- ");
+                temporary.append("-").append(data[i]).append("- ");
             } else {
-                temporary.append(data[i] + " ");
+                temporary.append(data[i]).append(" ");
             }
         }
         return String.format("%s\n", temporary);
     }
 
+    // Call function in main
     private static void studiKasus() {
         Scanner input = new Scanner(System.in);
         ArrayList<Mahasiswa> listMahasiswa = new ArrayList<>();
@@ -82,8 +82,9 @@ public class Main {
         return result;
     }
 
+    // Call function in main
     private static void sorting() {
-        ArrayList<Movie> list = new ArrayList<Movie>();
+        ArrayList<Movie> list = new ArrayList<>();
         list.add(new Movie(8.1,"How to Train Your Dragon",2010));
         list.add(new Movie(8.3,"Avengers: Endgame",2019));
         list.add(new Movie(8.3,"Your Name",2016));
@@ -106,6 +107,7 @@ public class Main {
         }
     }
 
+    // Call function in main
     private static void binarySearch() {
         Scanner input = new Scanner(System.in);
         SecureRandom generator = new SecureRandom();
