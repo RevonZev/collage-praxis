@@ -8,9 +8,9 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-//        binarySearch();
-        sorting();
-//        studiKasus();
+//        soalBinarySearch();
+//        soalSorting();
+        soalStudiKasus();
     }
 
     private static int binarySearch(int[] data, int key) {
@@ -31,8 +31,8 @@ public class Main {
             }
 
             middle = (low + high + 1) / 2;
-        } while ((low <= high));
-        return - 1;
+        } while (low <= high);
+        return -1;
     }
 
     // method to output certain values in array for binary search
@@ -50,7 +50,7 @@ public class Main {
     }
 
     // Call function in main
-    private static void studiKasus() {
+    private static void soalStudiKasus() {
         Scanner input = new Scanner(System.in);
         ArrayList<Mahasiswa> listMahasiswa = new ArrayList<>();
 
@@ -83,7 +83,7 @@ public class Main {
     }
 
     // Call function in main
-    private static void sorting() {
+    private static void soalSorting() {
         ArrayList<Movie> list = new ArrayList<>();
         list.add(new Movie(8.1,"How to Train Your Dragon",2010));
         list.add(new Movie(8.3,"Avengers: Endgame",2019));
@@ -108,7 +108,7 @@ public class Main {
     }
 
     // Call function in main
-    private static void binarySearch() {
+    private static void soalBinarySearch() {
         Scanner input = new Scanner(System.in);
         SecureRandom generator = new SecureRandom();
         // create array of 15 random integers in sorted order
