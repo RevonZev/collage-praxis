@@ -1,0 +1,79 @@
+body {
+  background-color: #15202b;
+  color: white;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15pt;
+}
+
+header, footer {
+  background-color: #22303c;
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+header h1, header h4, footer h1, footer h4 {
+  margin: 0;
+  padding: 0;
+}
+
+table, th, tr {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+article {
+  width: 100%;
+  margin: 0;
+  text-align: justify;
+}
+
+.article-title {
+  font-size: 2em;
+  margin: 5%;
+  padding-bottom: 10px;
+  text-align: center;
+  border-bottom-color: white;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+}
+
+button {
+  border: 0;
+  background: none;
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: white;
+}
+
+button:hover {
+  background-color: #8899ac;
+}
+
+button:active {
+  background-color: #2d3d4b;
+}
+
+a:link, a:active, a:visited {
+  color: white;
+}
+
+a:hover {
+  color: grey;
+}
+
+.card {
+  width: 80%;
+  background-color: #22303c;
+  padding: 3%;
+}
+
+.margin-center {
+  margin: 5% auto;
+}
+
+.flex-container {
+  display: flex;
+}/*# sourceMappingURL=main.css.map */
