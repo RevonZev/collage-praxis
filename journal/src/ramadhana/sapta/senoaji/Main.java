@@ -1,10 +1,9 @@
 package ramadhana.sapta.senoaji;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Main {
-    static ArrayList<NodeAdjacent> nodes = new ArrayList<NodeAdjacent>();
+    static ArrayList<NodeAdjacent> nodes = new ArrayList<>();
 
     public static void main(String[] args) {
         BFSDemo();
@@ -34,7 +33,7 @@ public class Main {
         nodes.add(node9);
         nodes.add(node10);
 
-        int matriks[][] = {
+        int[][] matriks = {
                 // Simpul 1 2 3 4 5 6 7 8 9 10
                 {0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, // Simpul 1 : value 1
                 {1, 0, 1, 0, 1, 0, 0, 0, 0, 0}, // Simpul 2 : value 2
@@ -52,7 +51,7 @@ public class Main {
         BFS_ADJACENT bfs_adjacent = new BFS_ADJACENT();
         bfs_adjacent.setNodes(nodes);
         bfs_adjacent.bfs(matriks, node10);
-        System.out.println("");
+        System.out.println();
     }
 
     private static void DFSDemo() {
@@ -78,7 +77,7 @@ public class Main {
         nodes.add(node9);
         nodes.add(node10);
 
-        int matriks[][] = {
+        int[][] matriks = {
         // Simpul 1 2 3 4 5 6 7 8 9 10
             {0, 1, 1, 0, 0, 0, 0, 0, 0, 0}, // Simpul 1 : value 1
             {1, 0, 1, 0, 1, 0, 0, 0, 0, 0}, // Simpul 2 : value 2
