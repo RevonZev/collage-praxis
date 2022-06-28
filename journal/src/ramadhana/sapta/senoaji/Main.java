@@ -48,9 +48,9 @@ public class Main {
         };
 
         System.out.print("Traversal Graph : ");
-        BFS_ADJACENT bfs_adjacent = new BFS_ADJACENT();
-        bfs_adjacent.setNodes(nodes);
-        bfs_adjacent.bfs(matriks, node10);
+        BFS_ADJACENT bfsExample = new BFS_ADJACENT();
+        bfsExample.setNodes(nodes);
+        bfsExample.bfs(matriks, node10);
         System.out.println();
     }
 
